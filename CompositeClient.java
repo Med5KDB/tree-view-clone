@@ -10,9 +10,6 @@ public class CompositeClient {
         Folder folder2 = new Folder("Documents");
         Folder folder3 = new Folder("Images");
 
-        file1.display();
-        file2.display();
-
         folder1.addChildComponents(file1);
         folder1.addChildComponents(file2);
         folder1.addChildComponents(folder3);
@@ -20,7 +17,10 @@ public class CompositeClient {
         folder2.addChildComponents(file3);
         folder2.addChildComponents(file4);
 
-        folder1.display();
-        folder2.display();
+        folder3.addChildComponents(new File("photo1.jpg"));
+
+        folder1.displayTree();
+
+        folder2.displayTree();
     }
 }

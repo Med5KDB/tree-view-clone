@@ -1,8 +1,9 @@
-public class File extends Data {
+public class File implements Data {
+    private String name;
     public File(String name) {
         this.name = name;
     }
-    public void display() {
-        System.out.println("Fichier: " + name);
+    public void display( String indent) {
+        System.out.println( indent + name);
     }
 }

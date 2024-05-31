@@ -1,4 +1,3 @@
-public abstract class Data {
-    public String name;
-    public void display(){}
+public interface Data {
+    void display(String indent);
 }

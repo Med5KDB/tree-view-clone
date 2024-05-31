@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Folder extends Data {
+public class Folder implements Data {
     private String name;
     private List<Data> childComponents;
 
@@ -9,14 +9,17 @@ public class Folder extends Data {
         this.name = name;
         this.childComponents = new ArrayList<Data>();
     }
-    public void display() {
-        System.out.println("Dossier: " + name);
-        System.out.println("====Contenu du dossier====");
+    public void display(String indent) {
+        System.out.println(indent + name);
+        
         for (Data data : childComponents) {
-            data.display();
+            data.display(indent + "|  ");
         }
     }
     public void addChildComponents(Data component){
         this.childComponents.add(component);
+    }
+    public void displayTree() {
+        display("");
     }
 }
